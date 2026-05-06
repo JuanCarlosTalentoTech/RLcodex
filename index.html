@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analítica Titanic | Proyecto de Datos</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #18202a;
+      --muted: #5a6675;
+      --line: #d9e0e8;
+      --accent: #0f766e;
+      --accent-dark: #115e59;
+      --soft: #eef7f5;
+      --panel: #ffffff;
+      --bg: #f7f9fb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wrap {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: 68vh;
+      display: grid;
+      align-content: center;
+      gap: 24px;
+      padding: 64px 0 48px;
+    }
+
+    .eyebrow {
+      color: var(--accent-dark);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      font-size: 0.85rem;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 850px;
+      font-size: clamp(2.2rem, 6vw, 4.8rem);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid var(--accent);
+    }
+
+    .primary {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .secondary {
+      background: #ffffff;
+      color: var(--accent-dark);
+    }
+
+    main {
+      padding: 42px 0 64px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .section {
+      margin-top: 34px;
+      padding: 28px;
+      background: var(--soft);
+      border: 1px solid #cfe7e2;
+      border-radius: 8px;
+    }
+
+    .section h2 {
+      margin: 0 0 10px;
+      font-size: 1.45rem;
+    }
+
+    .section p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 22px 0;
+      color: var(--muted);
+      background: #ffffff;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        min-height: auto;
+        padding: 44px 0 36px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <div class="eyebrow">Proyecto de analítica de datos</div>
+      <h1>Supervivencia en Titanic con Python y aprendizaje automático</h1>
+      <p class="lead">
+        Un cuaderno reproducible en español para explorar el dataset, limpiar variables,
+        visualizar patrones y entrenar un modelo predictivo con regresión logística.
+      </p>
+      <nav class="actions" aria-label="Enlaces principales">
+        <a class="button primary" href="RL_Housing.ipynb">Abrir cuaderno</a>
+        <a class="button secondary" href="tested.csv">Descargar CSV</a>
+        <a class="button secondary" href="README.md">Ver README</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="grid" aria-label="Resumen del proyecto">
+        <article class="card">
+          <h2>Datos</h2>
+          <p>418 pasajeros, 12 variables y una revisión explícita de calidad, nulos y tipos.</p>
+        </article>
+        <article class="card">
+          <h2>Análisis</h2>
+          <p>Tablas, cruces y visualizaciones para explicar patrones de supervivencia.</p>
+        </article>
+        <article class="card">
+          <h2>Modelo</h2>
+          <p>Pipeline con imputación, escalado, codificación categórica y regresión logística.</p>
+        </article>
+      </section>
+
+      <section class="section">
+        <h2>Lectura crítica</h2>
+        <p>
+          El notebook documenta una particularidad clave: en este archivo la variable
+          de supervivencia está completamente alineada con el sexo registrado. Por eso
+          las métricas del modelo deben interpretarse como validación del flujo técnico,
+          no como evidencia definitiva de generalización.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">Proyecto listo para versionar y publicar con GitHub Pages.</div>
+  </footer>
+</body>
+</html>
